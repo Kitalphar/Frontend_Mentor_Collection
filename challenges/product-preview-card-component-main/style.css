@@ -1,0 +1,197 @@
+:root {
+    
+    --fs-normal: 0.875rem;
+    --fs-heading: calc(var(--fs-normal) + 1.4rem);
+    --flex-direction: column;
+    --bg-color: var(--clr-Cream);
+    --bg-card: var(--clr-White);
+    --heading-color: var(--clr-verydarkBlue);
+    --text-color: var(--clr-Dark-grayishBlue);
+    --price-tag-color: var(--clr-darkCyan);
+    /*deconstructing dark Cyan color hsl values for button*/
+    --btn-hsl-h: 158;
+    --btn-hsl-s: 36%;
+    --btn-hsl-l: 37%;
+    --fw-heading: 700;
+    --card-maxwidth: 43em;
+
+
+    --ff-montserrat: 'Montserrat';
+    --ff-fraunces: 'Fraunces';
+    --clr-darkCyan: hsl(158, 36%, 37%);
+    --clr-Cream: hsl(30, 38%, 92%);
+    --clr-verydarkBlue: hsl(212, 21%, 14%);
+    --clr-Dark-grayishBlue: hsl(228, 12%, 48%);
+    --clr-White: hsl(0, 0%, 100%);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-family: var(--ff-montserrat);
+    font-size: var(--fs-normal);
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: var(--flex-direction);
+    max-width: var(--card-maxwidth);
+    margin-inline: 1.1rem;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    background-color: var(--bg-card);
+}
+
+#product-img {
+    flex: 1;
+    border-top-left-radius: 0.8rem;
+    border-top-right-radius: 0.8rem;
+    overflow: hidden;
+}
+
+#product-img > img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+#product-side {
+    flex: 1;
+    padding-inline: 1.8rem;
+    padding-block: 1rem;
+}
+
+#product-desc > aside {
+    text-transform: uppercase;
+    font-size: calc(var(--fs-normal) - 0.05rem);
+    letter-spacing: 0.4rem;
+    padding-bottom: 1.2rem;
+}
+
+#product-desc > h1 {
+    color: var(--heading-color);
+    font-family: var(--ff-fraunces);
+    font-weight: var(--fw-heading);
+    font-size: var(--fs-heading);
+    line-height: 1.1;
+    padding-bottom: 1rem;
+}
+
+#product-desc > p {
+    line-height: 1.6;
+    padding-bottom: 1.3rem;
+}
+
+#product-desc > span {
+    font-size: calc(var(--fs-normal) + 1.4rem);
+    font-family: var(--ff-fraunces);
+    color: var(--price-tag-color);
+    font-weight: 700;
+    padding-right: 1rem;
+}
+
+#product-desc > sup {
+    text-decoration: line-through;
+    line-height: 1.5;
+}
+
+#product-desc > button {
+    display: flex;
+    height: 3.4rem;
+    width: 100%;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: hsl(var(--btn-hsl-h), var(--btn-hsl-s), var(--btn-hsl-l));
+    border-radius: 0.5rem;
+    color: var(--clr-White);    
+    font-family: var(--ff-montserrat);
+    font-weight: 700;
+    margin-block: 1rem;
+}
+
+#product-desc > button:hover, #product-desc > button:focus {
+    --btn-hsl-l: 18%;
+    cursor: pointer;
+    background-color: hsl(var(--btn-hsl-h), var(--btn-hsl-s), var(--btn-hsl-l));
+    transition: background-color 0.3s;
+    
+}
+
+#product-desc > button:focus-visible {
+    outline: 2px solid #007bff;
+}
+
+#product-desc > button:active {
+    --btn-hsl-l: 50%;
+    background-color: hsl(var(--btn-hsl-h), var(--btn-hsl-s), var(--btn-hsl-l));
+    transition: background-color 0.3s;
+}
+
+@media (min-width: 37.5em) {
+
+    :root {
+        --flex-direction: row;
+    }
+
+    .wrapper {
+        align-items: center;
+        height: 98vh;
+    }
+
+    #product-img {
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 0.8rem;
+        overflow: hidden;
+    }
+
+    #product-img > img {
+        height: 100%;
+        max-width: 100%;
+    }
+
+    #product-side {
+        padding-inline: 0;
+    }
+
+    #product-desc {
+        max-width: calc((var(--card-maxwidth)/ 2) - 4.4em);
+        margin-inline: 2rem;
+    }
+
+    #product-desc > aside {
+        padding-top: 1rem; 
+    }
+
+    #product-desc > h1 {
+        padding-top: 0.8rem;
+        padding-bottom: 1.6rem;
+        line-height: 1;
+    }
+
+    #product-desc > p {
+        padding-bottom: 2rem;
+    }
+
+    #product-desc > button {
+        margin-top: 2rem;
+    }
+
+}

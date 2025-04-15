@@ -1,0 +1,321 @@
+@font-face {
+    font-family: "Hanken Grotesk";
+    src: url(./assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+}
+
+:root {
+
+    --clr-section-one: hsl(0, 100%, 67%);
+    --clr-section-two: hsl(39, 100%, 56%);
+    --clr-section-three: hsl(166, 100%, 37%);
+    --clr-section-four: hsl(234, 85%, 45%);
+
+    --clr-bg-gradient-one: hsl(252, 100%, 67%);
+    --clr-bg-gradient-two: hsl(241, 81%, 54%);
+    --clr-bg-circle-one: hsla(256, 72%, 46%, 1);
+    --clr-bg-circle-two: hsla(241, 72%, 46%, 0);
+
+    --clr-neutral-100: hsl(0, 0%, 100%);
+    --clr-neutral-200: hsl(221, 100%, 96%);
+    --clr-neutral-300: hsl(241, 100%, 89%);
+    --clr-neutral-800: hsl(224, 30%, 27%);
+
+    --ff-normal: "Hanken Grotesk";
+    --fw-normal: 500;
+    --fw-semibold: 700;
+    --fw-bold: 800;
+    --fs-small: 0.9rem;
+    --fs-normal: 1.125rem;
+    --fs-medium: 1.1875rem;
+    --fs-large: 1.8rem;
+    --fs-exlarge: 4rem;
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: var(--ff-normal);
+    font-size: var(--fs-normal);
+    font-weight: var(--fw-normal);
+}
+
+body {
+    background-color: var(--clr-neutral-100);
+}
+
+main,
+.content-wrapper,
+#summary_container,
+.summary-section
+{
+    display: flex;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-wrapper {
+    width: 41rem;
+    height: 28.375rem;
+    border-radius: 1.5rem;
+    box-shadow: 0.5rem 0.5rem 1.5rem 0.2rem var(--clr-neutral-200);
+}
+
+.content-wrapper > div,
+#summary_container
+{
+    flex: 1;
+}
+
+/* ---------- Left/Top section ---------- */
+
+.content-wrapper > div:first-of-type {
+    border-radius: 1.5rem;
+    flex: 0 1 50%;
+    text-align: center;
+    justify-items: center;
+    color: var(--clr-neutral-300);
+    z-index: 1;
+    background: linear-gradient(180deg, var(--clr-bg-gradient-one) 0%, var(--clr-bg-gradient-two) 60% );
+}
+
+h1 {
+    font-size: var(--fs-medium);
+    margin-top: 2.75rem;
+}
+
+#total_score,
+h2 {
+    color: var(--clr-neutral-100);
+}
+
+#total_score {
+    font-size: var(--fs-exlarge);
+    font-weight: var(--fw-bold);
+}
+
+.the-great-circle {
+    width: 11rem;
+    height: 11rem;
+    align-content: center;
+    border-radius: 50%;
+    margin-block: 2rem;
+    background: linear-gradient(180deg, var(--clr-bg-circle-one) 20%, var(--clr-bg-circle-two) 100% );
+}
+
+.the-great-circle,
+#score_desc2 {
+    /* Firefox didn't like justify-items: center
+    for some reason, so this is the workaround */
+    margin-inline: auto;
+}
+
+#score_desc1 {
+    font-size: var(--fs-large);
+    font-weight: var(--fw-normal);
+}
+
+#score_desc2 {
+    margin-top: 1rem;
+    max-width: 26ch;
+}
+
+/* -------- Right/Bottom section -------- */
+
+.content-wrapper > div:last-of-type {
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    background-color: var(--clr-neutral-100);
+    padding: 2rem 2rem 2rem 3.6rem;
+    flex: 1;
+    margin-left: -1.5rem;
+    z-index: 0;
+}
+
+#summary_container {
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
+.summary-section {
+    height: 3rem;
+    align-items: center;
+    border-radius: 0.6rem;
+    padding-inline: 1rem;
+    justify-content: space-between;
+}
+
+.summary-section:first-of-type {
+    padding: unset;
+    font-size: var(--fs-normal);
+}
+
+.summary-section > h4 > img {
+    position: relative;
+    top: 0.2rem;
+    margin-right: 0.5rem;
+}
+
+.summary-section > p {
+    color: hsla(from var(--clr-neutral-800) h s l / 0.6);
+    font-weight: var(--fw-semibold);
+}
+
+.summary-score {
+    color: var(--clr-neutral-800);
+}
+
+#btn_continue {
+    height: 3rem;
+    color: var(--clr-neutral-100);
+    background-color: var(--clr-neutral-800);
+    margin-top: 1rem;
+    border-radius: 1.5rem;
+    border-style: none;
+    font-size: var(--fs-small);
+    font-weight: var(--fw-semibold);
+}
+
+/* --------- Colored sections ----------- */
+
+/*  Why i'm doing it like this?
+    Because the "Continue" button makes me think there are
+    more data to be loaded and displayed, so i'm going with
+    the assumption that the section's colors remain the
+    same, just the text changes.
+ */
+
+.summary-section:nth-child(2) {
+    background-color: hsla(from var(--clr-section-one) h s l / 0.10);
+}
+
+.summary-section:nth-child(2) > h4 {
+    color: var(--clr-section-one);
+}
+
+
+.summary-section:nth-child(3) {
+    background-color: hsla(from var(--clr-section-two) h s l / 0.10);
+}
+
+.summary-section:nth-child(3) > h4 {
+    color: var(--clr-section-two);
+}
+
+
+.summary-section:nth-child(4) {
+    background-color: hsla(from var(--clr-section-three) h s l / 0.10);
+}
+
+.summary-section:nth-child(4) > h4 {
+    color: var(--clr-section-three);
+}
+
+
+.summary-section:nth-child(5) {
+    background-color: hsla(from var(--clr-section-four) h s l / 0.10);
+}
+
+.summary-section:nth-child(5) > h4 {
+    color: var(--clr-section-four);
+}
+
+/* --------------- Events --------------- */
+
+#btn_continue:hover,
+#btn_continue:focus-visible {
+    cursor: pointer;
+    background: linear-gradient(180deg, var(--clr-bg-gradient-one) 0%, var(--clr-bg-gradient-two) 60% );
+    outline: none;
+}
+
+#btn_continue:active {
+    transform: translateY(0.1rem);
+}
+
+/* ------------ Media Query ------------- */
+
+@media (max-width: 37.5rem) {
+
+    main {
+        align-items: unset;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+        margin-inline: 2rem;
+    }
+
+    .content-wrapper > div:last-of-type {
+        padding: 3rem 1.5rem 2rem 1.5rem;
+        margin-left: unset;
+        margin-top: -3rem;
+        border-bottom-left-radius: 1.5rem;
+    }
+
+    #score_desc2 {
+        max-width: 30ch;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 23.5rem) {
+
+    :root {
+        --fs-small: 1rem;
+        --fs-normal: 1rem;
+        --fs-large: 1.4rem;
+        --fs-exlarge: 3rem;
+    }
+
+    .content-wrapper {
+        margin-inline: unset;
+    }
+
+    .content-wrapper > div:first-of-type {
+        border-radius: unset;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+    }
+
+    h1 {
+        margin-top: 2rem;
+    }
+
+    .the-great-circle {
+        width: 8.5rem;
+        height: 8.5rem;
+        margin-block: 1.5rem;
+    }
+
+    .content-wrapper > div:last-of-type { 
+        padding: 1.5rem 1.5rem 2rem 1.5rem;
+        border-radius: unset;
+        margin-top: -2rem;
+    }
+
+    .summary-section:first-of-type {
+        align-items: flex-end;
+    }
+
+    .summary-section {
+        height: 3.5rem;
+    }
+
+    #btn_continue {
+        height: 3.5rem;
+        border-radius: 1.75rem;
+    }
+}
+

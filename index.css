@@ -1,0 +1,214 @@
+:root {
+    --bg-color-light: hsl(219, 100%, 88%);
+    --bg-content-light: hsl(196, 100%, 95%);
+    --text-color-light: hsl(216, 18%, 16%);
+
+    --bg-color-dark: hsl(216, 18%, 16%);
+    --bg-content-dark: 	hsl(217, 10%, 25%);
+    --text-color-dark: hsl(34, 41%, 93%);
+
+    --accent-color: #3898c9;
+
+    --bg-color: var(--bg-color-light);
+    --bg-content-color: var(--bg-content-light);
+    --text-color: var(--text-color-light);
+    --outline-color: var(--accent-color);
+    --btn-bg-color: var(--bg-content-light);
+}
+
+*,
+::before,
+::after 
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    width: 100%;
+    height: 97vh;
+}
+
+header,
+.navbar,
+main,
+#navlink_container > ul,
+#content-wrapper
+{
+    display: flex;
+}
+
+.navbar,
+#content-wrapper {
+    margin-inline: max(1rem, 3vw);
+    background-color: hsla(from var(--bg-content-color) h s l / 0.5);
+}
+
+h1 {
+    margin-top: 3rem;
+    font-size: clamp(1.725rem, calc(3vw + 1rem), 3.5rem);
+}
+
+h2 {
+    font-size: clamp(0.9rem, calc(1vw + 0.5rem), 1.375rem);
+}
+
+/* ----------------------Navbar---------------------- */
+
+header {
+    justify-content: center;
+}
+
+.navbar {
+    height: 3rem;
+    width: max(80rem, 67vw);
+    margin-top: 2rem;
+    padding-inline: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0.5rem;
+}
+
+#navlinks {
+    flex-direction: row;
+}
+
+#navlinks > li {
+    height: 1.75rem;
+    padding: 0.25rem;
+    margin-left: 1rem;
+    list-style: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 0.25rem;
+}
+
+#theme_select_button {
+    margin-right: 1rem;
+    height: 1.75rem;
+    width: 1.75rem;
+    border-radius: 50%;
+    border: none;
+    color: var(--text-color);
+    background-color: hsla(from var(--btn-bg-color) h s l / 0.5);
+    background-image: url("./assets/images/svg/moon.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.active {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* -------------------Main Content------------------- */
+
+.navbar,
+#content-wrapper,
+.card {
+    /* box-shadow: 0 0.25em 1.25em rgba(0, 0, 0, 0.3); */
+    box-shadow: 0 0.25em 1.25em rgba(23, 102, 250, 0.3);
+    border: 0.1em solid rgba(255, 255, 255, 0.15);
+}
+
+main {
+    flex-direction: column;
+    align-items: center;
+}
+
+#content-wrapper {
+    min-width: 22rem;
+    max-width: max(80rem, 67vw);
+    margin-top: 4rem;
+    padding: max(1rem, 2.2vw);
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1.5rem;
+    border-radius: 1rem;
+}
+
+.card {
+    flex: 1;
+    min-width: 15rem;
+    max-width: 26rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease-in-out;
+    background-color: var(--bg-content-color);
+}
+
+.card h3 {
+    max-width: 24ch;
+    margin-block: 0.75rem;
+    justify-self: center;
+    font-size: clamp(1.25rem, calc(1vw + 0.5rem), 1.375rem);
+}
+
+.card > img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
+.wip {
+    position: sticky;
+    justify-self: baseline;
+}
+
+/* ----------------------Events---------------------- */
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}   
+
+.card:focus-visible,
+#navlinks>li:focus-visible,
+#theme_select_button:focus-visible {
+    outline-style: outset;
+    outline-width: 0.125rem;
+    outline-color:  var(--outline-color);
+    outline-offset: 0.5rem;
+}
+
+#navlinks>li:focus-visible,
+#theme_select_button:focus-visible {
+    outline-offset: 0.25rem;
+}
+
+
+#theme_select_button:hover {
+    cursor: pointer;
+}
+
+/* -------------------Media Query-------------------- */
+
+@media (prefers-color-scheme: light) { 
+    :root {
+        --bg-color: var(--bg-color-light);
+        --bg-content-color: var(--bg-content-light);
+        --text-color: var(--text-color-light);
+        --link-color: var(--text-color-light);
+        --link-hover-color: var(--accent-color-light);
+        --btn-bg-color: var(--bg-content-light);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: var(--bg-color-dark);
+        --bg-content-color: var(--bg-content-dark);
+        --text-color: var(--text-color-dark);
+        --link-color: var(--text-color-dark);
+        --link-hover-color: var(--accent-color-dark);
+        --btn-bg-color: var(--bg-content-dark);
+    }
+}
+
+/* -------------------Breakpoints------------------- */
+

@@ -1,0 +1,212 @@
+@font-face {
+    font-family: 'Young Serif';
+    src: url('./assets/fonts/young-serif/YoungSerif-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('./assets/fonts/outfit/Outfit-VariableFont_wght.ttf') format('truetype');
+}
+
+
+
+:root {
+/* ---------------------------------------- */
+
+    --fs-default: 1rem;
+    --fs-h1: calc(var(--fs-default) + 1.5rem);
+    --fs-h2: calc(var(--fs-default) + 0.75rem);
+    --fs-h3: calc(var(--fs-default) + 0.25rem);
+    --ff-primary: var(--ff-outfit);
+    --ff-secondary: var(--ff-serif);
+    --fw-normal: 400;
+
+    --bg-color: var(--clr-Stone-100);
+    --bg-content: var(--clr-White);
+    --bg-highlight: var(--clr-Rose-50);
+    --h1-clr: var(--clr-Stone-900);
+    --h2-clr: var(--clr-Brown-800);
+    --h3-clr: var(--clr-Rose-800);
+    --hr-clr: var(--clr-Stone-150);
+    --highlight: var(--clr-Brown-800);
+    --boldText: var(--clr-Stone-150);
+    --font-clr: var(--clr-Stone-600);
+
+/* ---------------------------------------- */
+
+    --ff-serif: 'Young Serif', 'Verdana';
+    --ff-outfit: 'Outfit', 'Arial';
+    --fw-600: 600;
+    --fw-700: 700;
+
+    --clr-White: hsl(0, 0%, 100%);
+    --clr-Stone-100: hsl(30, 54%, 90%);
+    --clr-Stone-150: hsl(30, 18%, 87%);
+    --clr-Stone-600: hsl(30, 10%, 34%);
+    --clr-Stone-900: hsl(24, 5%, 18%);
+    --clr-Brown-800: hsl(14, 45%, 36%);
+    --clr-Rose-800: hsl(332, 51%, 32%);
+    --clr-Rose-50: hsl(330, 100%, 98%);
+}
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-normal);
+    color: var(--font-clr);
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+main {
+    display: flex;
+    place-content: center;
+}
+
+.wrapper {
+    max-width: 46rem;
+    padding: 2.5rem;
+    margin-block: 10rem;
+    border-radius: 2rem;
+    background-color: var(--bg-content);
+}
+
+.wrapper > img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+h1 {
+    font-family: var(--ff-secondary);
+    font-size: var(--fs-h1);
+    font-weight: var(--fw-normal);
+    color: var(--h1-clr);
+}
+
+h2 {
+    font-family: var(--ff-secondary);
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-normal);
+    color: var(--h2-clr);
+}
+
+h3 {
+    font-size: var(--fs-h3);
+    color: var(--h3-clr);
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.bold {
+    font-weight: var(--fw-700);
+}
+
+section:not(:last-of-type) {
+    margin-block: 2rem;
+}
+section:last-of-type {
+    margin-top: 2rem;
+}
+
+section > ul, section > ol {
+    line-height: 1.8;
+    margin-left: 1.5rem;
+}
+
+section li {
+    padding-left: 1rem;
+}
+
+section li::marker {
+    color: var(--highlight);
+}
+
+#section-preptime {
+    background-color: var(--bg-highlight);
+    padding: 1.7rem;
+    border-radius: 1rem;
+}
+
+#section-preptime li::marker ,#section-ingredients li::marker {
+    font-size: 0.8rem;
+}
+
+#section-instructions li::marker {
+    font-weight: var(--fw-700);
+}
+
+hr {
+    border: none;
+    height: 0.05rem;
+    background-color: var(--hr-clr);
+}
+
+#nutrition-table {
+    width: 100%;
+    text-indent: 2rem;
+    margin-top: 1rem;
+    border-collapse: collapse;
+}
+
+#nutrition-table  tr {
+    height: 3rem;
+}
+
+#nutrition-table td:last-child {
+    color: var(--h2-clr);    
+    font-weight: var(--fw-700);
+}
+
+#nutrition-table tr:not(:last-child) td{
+    border-bottom: 0.1rem solid var(--hr-clr);
+}
+
+@media (max-width: 34.375rem) {
+
+    :root {
+        --fs-h1: calc(var(--fs-default) + 1.2rem);
+    }
+
+    .wrapper {
+        margin-block: 0;
+        border-radius: 0;
+        padding: 1.85rem;
+    }
+
+    .wrapper > img {
+        width: calc(100% + 4rem);
+        margin: -2rem 0 0 -2rem;
+        border-radius: unset;
+    }
+
+    h1 {
+        line-height: 1;
+        margin-bottom: 2rem !important;
+    }
+
+    section > ul, section > ol {
+        line-height: 1.6;
+        margin-left: 1.5rem;
+    }
+
+    #section-introduction > p {
+        line-height: 1.5;
+    }
+
+    #section-ingredients ul li:not(:last-of-type) {
+        line-height: 2;
+    }
+
+}

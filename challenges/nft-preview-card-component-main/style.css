@@ -1,0 +1,205 @@
+@font-face {
+    font-family: "Outfit";
+    src: url(./assets/fonts/Outfit-VariableFont_wght.ttf) format("truetype") ;
+}
+
+:root {
+    --clr-White: hsl(0, 0%, 100%);
+    --clr-Blue-100: hsl(178, 100%, 50%);
+    --clr-Blue-200: hsl(215, 51%, 70%);
+    --clr-Blue-600: hsl(215, 32%, 27%);
+    --clr-Blue-700: hsl(216, 50%, 16%);
+    --clr-Blue-800: hsl(217, 54%, 11%);
+
+    --ff-normal: "Outfit";
+    --fs-small: 1rem;
+    --fs-normal: 1.125rem;
+    --fs-header: 1.375rem;
+    --fw-light: 300;
+    --fw-normal: 400;
+    --fw-semi-bold: 600;
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: var(--clr-Blue-800);
+    font-family: var(--ff-normal);
+    font-size: var(--fs-normal);
+    font-weight: var(--fw-light);
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    color: var(--clr-Blue-200);
+    justify-content: center;
+    align-items: center;
+}
+
+main,
+.card,
+.card-content,
+.card-content > div,
+.card-price,
+.card-timer {
+    display: flex;
+}
+
+.card,
+.card-content {
+    flex-direction: column;
+}
+
+.card {
+    width: 22rem;
+    height: 37.25rem;
+    background-color: var(--clr-Blue-700);
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+.card-link {
+    color: var(--clr-White);
+    text-decoration: none;
+}
+
+.card-price {
+    color: var(--clr-Blue-100);
+    font-weight: var(--fw-semi-bold);
+}
+
+.card-imgcontainer {
+    width: 100%;
+    height: 19rem;
+    margin-bottom: 1.375rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+}
+
+.card-img-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    align-content: center;
+    width: inherit;
+    height: inherit;
+    background-color: var(--clr-Blue-100);
+    opacity: 0;
+}
+
+.card-imgcontainer > img {
+    width: inherit;
+    height: auto;
+}
+
+.card-content { flex: 1;}
+
+.card-content > div {
+    flex-direction: row;
+    align-items: center;
+}
+
+.card-content,
+.card-content > div:first-of-type {
+    justify-content: space-between;
+}
+
+.card-desc {
+    line-height: 1.5;
+}
+
+.card-price,
+.card-timer,
+.card-content > div:last-of-type {
+    font-size: var(--fs-small);
+}
+
+.card-title {
+    font-weight: var(--fw-semi-bold);
+    font-size: var(--fs-header);
+}
+
+.card-price,
+.card-timer {
+    align-items: center;
+}
+
+.card-price > img,
+.card-timer > img {
+    margin-right: 0.5rem;
+    height: 100%;
+}
+
+.card-content > hr {
+    border-color: var(--clr-Blue-600);
+    background-color: var(--clr-Blue-600);
+    border-radius: 50%;
+}
+
+.card-creator-avatar {
+    max-height: 2.125rem;
+    border: 1px var(--clr-White) solid;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+/* --------------- Events --------------- */
+
+.card-img-hover:hover,
+.card-img-hover:focus-visible {
+    cursor: pointer;
+    opacity: 0.5;
+    transform: opacity 3s ease-in;
+}
+
+.card-img-hover:hover  img {
+    filter: brightness(0) invert(1);
+    opacity: 1;
+}
+
+.card-link:hover,
+.card-link:focus-visible {
+    color: var(--clr-Blue-100);
+}
+
+.card-link:focus-visible {
+    outline: var(--clr-Blue-100) 0.125rem solid;
+    outline-offset: 0.2rem;
+    border-radius: 0.5rem;
+}   
+
+/* ----------- Media queries ------------ */
+
+
+@media (max-width: 23.5rem) {
+
+    :root {
+        --fs-small: 0.9375rem;
+        --fs-normal: 1rem;
+        --fs-header: 1.375rem;
+    }
+
+    main {
+        align-items: unset;
+    }
+
+    .card {
+        width: 20.5rem;
+        height: 34.125rem;
+        margin-block: 4rem;
+    }
+
+    .card-imgcontainer {
+        max-height: 17.5rem;
+        margin-bottom: 1.5rem;
+    }
+}

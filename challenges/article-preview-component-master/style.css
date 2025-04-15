@@ -1,0 +1,277 @@
+@font-face {
+    font-family: "Manrope";
+    src: url("./assets/fonts/Manrope-VariableFont_wght.ttf");
+}
+
+
+:root {
+    --ff-normal: "Manrope";
+    --fs-normal: 0.8125rem;
+    --fs-h2: calc(var(--fs-normal) * 2);
+    --fw-normal: 500;
+    --fw-header: 700;
+
+    --card-width: 56rem;
+
+    --clr-primary: hsl(210, 46%, 95%);
+    --clr-secondary: hsl(214, 17%, 51%);
+    --clr-neutral-200: hsl(212, 23%, 69%);
+    --clr-neutral-700: hsl(217, 19%, 35%);
+    --clr-bg-card: white;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: var(--clr-primary);
+    color: var(--clr-secondary);
+    font-family: var(--ff-normal);
+    font-size: var(--fs-normal);
+    font-weight: var(--fw-normal);
+}
+
+h1 {display: none;}
+
+.wrapper {
+    display: flex;
+    height: 98vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-wrapper {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    background-color: var(--clr-bg-card);
+    width: 56rem;
+    height: 21.5rem;
+    border-radius: 1rem;
+}
+
+.card-img {
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+.col-1 {
+    overflow: hidden;
+    margin-right: 1rem;
+}
+
+.col-2 {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem 0 1.5rem;
+}
+
+blockquote {
+    max-width: 45ch;
+
+}
+
+.bold {
+    color: var(--clr-neutral-700);
+    font-weight: var(--fw-header);
+}
+
+.cs-1 { grid-column: span 1;}
+.cs-2 { grid-column: span 2;}
+.cs-4 { grid-column: span 4;}
+.cs-6 { grid-column: span 6;}
+.cs-8 { grid-column: span 8;}
+.cs-10 { grid-column: span 10;}
+
+.col-2 h2 {
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-header);
+    padding-bottom: 1rem;
+}
+
+.socials-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-top: 1.5rem;
+}
+
+.socials-1 {
+    position: absolute;
+    width: 100%;
+    bottom: 0.6rem;
+}
+
+.user-container {
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    margin-top: auto;
+    margin-bottom: 1rem;
+}
+
+.user-container p, blockquote {
+    line-height: 1.5;
+}
+
+.user-container p:last-of-type {
+    color: var(--clr-neutral-200);
+}
+
+.user-img {
+    border-radius: 50%;
+    width: 3.2rem;
+}
+
+.socials-2 {
+    position: absolute;
+    bottom: 7rem;
+    left: 17.4rem;
+    height: 4.2rem;
+    width: 20rem;
+    background-color: var(--clr-neutral-700);
+    border-radius: 0.7rem;
+}
+
+#socialbubble {
+    display: none;
+}
+
+#diamond {
+    display: none;
+    content: "";
+    position: absolute;
+    bottom: -0.5rem;
+    left: 9.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    z-index: 4;
+    transform: rotateZ(45deg);
+    background-color: var(--clr-neutral-700);
+}
+
+.social-links {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 1rem;
+    margin-left: 3rem;
+}
+
+.social-links span {
+    color: var(--clr-neutral-200);
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+}
+
+#sharebutton {
+    position: absolute;
+    border: none;
+    top: 0;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--clr-primary);
+    z-index: 1;
+}
+
+.flex-center {
+    height: inherit;
+    place-content: center;
+}
+
+@media (max-width: 56rem) {
+
+    :root {
+        --fs-h2: calc(var(--fs-normal) * 1.6);
+    }
+
+    .wrapper {
+        align-items: unset;
+        height: 0;
+        justify-content: unset;
+        margin-block: 4rem;
+        margin-inline: 2rem;
+    }       
+
+    .content-wrapper {
+        max-width: 40rem;
+        height: 39rem;
+        grid-template-columns: 1fr;
+        margin-inline: auto;
+    }
+
+    .card-img {
+        width: 100%;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        border-bottom-left-radius: 0;
+    }
+
+    .col-1 {
+        height: 20rem;
+        margin-right: 0;
+    }
+
+    .col-2 {
+        padding: 0 2rem 0 2rem;
+    }
+
+    blockquote {
+        max-width: 65ch;
+        margin-bottom: 3rem;
+    }
+
+    .socials-1 {
+        bottom: 0.1rem;
+    }
+
+    .socials-2 { 
+        width: calc(100% + 4rem);
+        height: 5rem;
+        left: -2rem;
+        bottom: 0.1rem;
+        border-radius: 0;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+    }
+
+    .social-links {
+        grid-template-columns: repeat(14, 1fr);
+        text-align: left;
+    }
+
+    .social-links > div:first-of-type {
+        margin-left: -1rem;
+    }
+
+    /* this is only here cos of a weird issue during testing */
+    #diamond {
+        bottom: 2rem;
+        z-index: -1;
+    }
+
+}
+
+@media (max-width: 28rem) {
+
+    .content-wrapper {
+        width: 24.5rem;
+    }
+
+    .col-1 {
+        height: 15rem;
+    }
+
+    blockquote {
+        max-width: 31ch;
+        margin-bottom: 2rem;
+    }
+
+    .user-container div:nth-child(2) {
+        padding-left: 1.5rem ;
+    }
+
+}

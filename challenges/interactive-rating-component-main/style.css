@@ -1,0 +1,282 @@
+@font-face {
+    font-family: "Overpass";
+    src: url(./assets/fonts/Overpass-VariableFont_wght.ttf) format("truetype");
+}
+
+:root {
+    --clr-primary: hsl(25, 97%, 53%);
+    --clr-neutral-100: hsl(0, 0%, 100%);
+    --clr-neutral-200: hsl(217, 12%, 63%);
+    /* --clr-neutral-600: hsl(213, 19%, 18%); */
+    --clr-neutral-800: hsl(216, 12%, 8%);
+
+    /* replacing --clr-neutral-600 from style-guide,
+        as it seems to be the wrong color */
+    --clr-card-background: hsl(215, 24%, 14%);
+
+    --ff-normal: "Overpass";
+    --fs-normal: 0.9375rem;
+    --fs-header: 1.6875rem;
+    --fw-normal: 400;
+    --fw-semi-bold: 700;
+
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: var(--clr-neutral-800);
+    font-family: var(--ff-normal);
+    font-size: var(--fs-normal);
+    font-weight: var(--fw-normal);
+    color: var(--clr-neutral-200);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+    white-space: nowrap;
+}
+
+main,
+#card_rating,
+#card_success,
+.card-circlediv,
+.card-label,
+.card-form-ratingbox
+{
+    display: flex;
+}
+
+#card_rating,
+#card_success
+{
+    flex-direction: column;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    /* background-color: hsla( from var(--clr-neutral-600) h s l / 0.5); */
+    background-color: var(--clr-card-background);
+}
+
+.card,
+.card-content-wrapper
+{
+    width: 25.75rem;
+    height: 26rem;
+    border-radius: 2rem;
+}
+
+.card-content-wrapper {
+    position: absolute;
+}
+
+#card_rating,
+#card_success {
+    position: relative;
+    left: 0;
+    top: 0;
+    flex: 1;
+    padding: 1.5rem 2rem 1.5rem 2rem;
+    height: 100%;
+    justify-content: space-evenly;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.card h2,
+.card h3
+{
+    color: var(--clr-neutral-100);
+    font-size: var(--fs-header);
+}
+
+.card-textcontent > p {
+    margin-top: 1rem;
+    line-height: 1.5;
+    max-width: 35ch;
+}
+
+/* ------------ Rating page ------------ */
+
+.card-circlediv {
+    width: 3.125rem;
+    height: 3.125rem;
+    background-color: hsla(from var(--clr-neutral-200) h s l / 0.1);
+    border-radius: 50%;
+}
+
+.card-label {
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    font-weight: var(--fw-semi-bold);
+}
+
+.card-circlediv,
+.card-label
+{
+    align-items: center;
+    justify-content: center;
+}
+
+.card-textcontent {
+    margin-top: 2rem;
+}
+
+.card-form-ratingbox {
+    justify-content: space-between;
+    margin-block: 1.25rem;
+}
+
+.card input[type="radio"] {
+    appearance: none;
+    outline: none;
+}
+
+.card-btnsubmit {
+    --btn-height: 2.875rem;
+    height: var(--btn-height);
+    width: 100%;
+    margin-top: 1rem;
+    font-size: var(--fs-normal);
+    font-weight: var(--fw-semi-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.125rem;
+    border-radius: calc(var(--btn-height) / 2);
+    background-color: var(--clr-primary);
+    border-style: none;
+}
+
+/* ------------ Thanks page ------------ */
+
+#card_success {
+    text-align: center;
+    align-items: center;
+}
+
+#card_success > img {
+    width: 10rem;
+    margin-block: 1rem;
+}
+
+.card-rating-box {
+    width: 12rem;
+    height: 2rem;
+    border-radius: 1rem;
+    align-content: center;
+    color: var(--clr-primary);
+    background-color: hsla(from var(--clr-neutral-200) h s l / 0.1);
+}
+
+/* -------------- Events -------------- */
+
+.card-label:hover {
+    cursor: pointer;
+    color: var(--clr-neutral-800);
+    background-color: var(--clr-neutral-100);
+    transition: background-color 0.3s;
+}
+
+.card-label:focus-within {
+    cursor: pointer;
+    color: var(--clr-neutral-800);
+    background-color: var(--clr-primary);
+    
+}
+
+.card-label:has(input[type="radio"]:checked) {
+    color: var(--clr-neutral-800);
+    background-color: var(--clr-primary);
+}
+
+.card-btnsubmit:hover,
+.card-btnsubmit:focus-visible {
+    outline: none;
+    cursor: pointer;
+    color: var(--clr-neutral-800);
+    background-color: var(--clr-neutral-100);
+    transition: background-color 0.3s;
+}
+
+/* ------------ Media Query ------------ */
+
+@media (max-width: 26.5rem) {
+
+    :root {
+        --fs-normal: 0.875rem;
+        --fs-header: 1.5rem;
+    }
+
+    .card,
+    .card-content-wrapper
+    {
+        width: 20.5rem;
+        height: 22.5rem;
+        border-radius: 1rem;
+    }
+
+    #card_rating,
+    #card_success {
+        padding: 1.5rem 1.5rem 2rem 1.5rem;
+    }
+
+    .card-circlediv {
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: 50%;
+    }
+
+    .card-circlediv:first-of-type {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .card-circlediv > img {
+        width: 0.875rem;
+        height: auto;
+    }
+
+    .card-textcontent {
+        margin-top: 1.5rem;
+    }
+
+    .card-textcontent > p {
+        margin-top: 0.875rem;
+    }
+
+    .card-btnsubmit {
+        margin-top: unset;
+    }
+
+    #card_success > img {
+        width: 9rem;
+    }
+
+    #card_rating-box {
+        width: 10.25rem;
+        height: 2rem;
+    }
+    
+}

@@ -1,0 +1,154 @@
+@font-face {
+    font-family: 'Figtree';
+    src: url(./assets/fonts/Figtree-VariableFont_wght.ttf) format('truetype');
+}
+
+:root {
+--fs-default: var(--fs-normal);
+--clr-page-bg: var(--clr-Yellow);
+--clr-page-card: var(--clr-White);
+
+--clr-Yellow: hsl(47, 88%, 63%);
+--clr-White: hsl(0, 0%, 100%);
+--clr-Gray-500: hsl(0, 0%, 42%);
+--clr-Gray-950: hsl(0, 0%, 7%);
+
+--ff-default: 'Figtree', 'sans-serif';
+--fw-medium: 500;
+--fw-bold: 800;
+--fs-300: 0.875rem;
+--fs-normal: 1rem;
+--fs-mobile: 0.9rem;
+}
+
+*, *::before, *:after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: var(--fs-default);
+    font-weight: var(--fw-medium);
+    font-family: var(--ff-default);
+}
+
+body {
+    background-color: var(--clr-page-bg);
+}
+
+.fw-bold {
+    font-weight: var(--fw-bold);
+}
+
+.wrapper {
+    display: flex;
+    height: 98vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    width: 24em;
+    background-color: var(--clr-page-card);
+    flex-shrink: 0;
+    border: 1px black solid;
+    border-radius: 1rem;
+    box-shadow: 0.5em 0.5em var(--clr-Gray-950);
+    align-content: center;
+}
+
+
+#card-title:hover, #card-title:focus {
+    color: var(--clr-Yellow);
+    cursor: pointer;
+}
+
+.label-list {
+    display: flex;
+    flex: 0;
+    flex-wrap: wrap;
+    gap: 0.34rem;
+    justify-content: flex-start;
+    margin-top: 1.1rem;
+}
+
+.label-container {
+    background-color: var(--clr-Yellow);
+    padding-block: 0.35rem;
+    padding-inline: 0.7rem;
+    border-radius: 0.3rem;
+    margin-block: 0.075rem;
+    font-size: var(--fs-300);
+}
+
+.publish-date {
+    font-size: var(--fs-300);
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+#card-img {
+    border-radius: 0.7rem;
+    width: 100%;
+    height: auto;
+}
+
+.card-desc {
+    margin-top: -0.22rem;
+}
+
+#details {
+    color: var(--clr-Gray-500);
+    line-height: 1.5;
+}
+
+.user-info {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+}
+
+#user-avatar {
+    width: 2rem;
+    height: auto;
+    margin-right: 0.8rem;
+}
+
+#user-name {
+    padding: 0;
+    margin: 0;
+    font-size: var(--fs-300);
+}
+
+@media (max-width: 28.125em) {
+    :root {
+        --fs-default: var(--fs-mobile);
+    }
+
+    .card {
+        width: 22.65rem;
+    }
+
+    #card-img {
+        object-fit: cover;
+        height: 14rem;
+    }
+
+    .label-list {
+        margin-top: 1.3rem;
+    }
+
+    #card-title {
+        font-size: 1.4rem;
+        margin-top: 1.4rem;
+    }
+
+    .user-info {
+        margin-top: 1.5rem;
+    }
+
+}
+
+

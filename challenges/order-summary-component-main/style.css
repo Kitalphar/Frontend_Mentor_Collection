@@ -1,0 +1,262 @@
+@font-face {
+    font-family: "Red Hat Display";
+    src: url(./asset/fonts/RedHatDisplay-VariableFont_wght.ttf) format("truetype");
+}
+
+:root {
+
+    --clr-primary-200: hsl(225, 100%, 94%);
+    --clr-primary-500: rgb(110, 99, 209);
+    --clr-primary-600: hsl(245, 75%, 52%);
+
+    --clr-neutral-100: hsl(225, 100%, 98%);
+    --clr-neutral-200: hsl(224, 23%, 55%);
+    --clr-neutral-800: hsl(223, 47%, 23%);
+
+    --fs-small: 0.9375rem;
+    --fs-normal: 1rem;
+    --fs-heading2: 1.6875rem;
+    --fs-heading3: 1rem;
+    --ff-normal: "Red Hat Display";
+    --fw-medium: 500;
+    --fw-Bold: 700;
+    --fw-extraBold: 900;
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: var(--clr-primary-200);
+    color: var(--clr-neutral-200);
+    font-family: var(--ff-normal);
+    font-weight: var(--fw-medium);
+    font-size: var(--fs-normal);
+}
+
+main,
+.card-order-summary,
+.card-summarycontainer,
+.card-summary-annual,
+.card-summary-annual > div
+{
+    display: flex;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+main > picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+main > picture img {
+    width: 100vw;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    clip: rect(0, 0, 0, 0);
+}
+
+.card-order-summary {
+    width: 28rem;
+    height: 43.5rem;
+    border-radius: 1.5rem;
+    background-color: var(--clr-neutral-100);
+    box-shadow: 0rem 2rem 2rem -0.5rem hsla(from var(--clr-primary-600) h s l / 0.15);
+}
+
+.card-order-summary,
+.card-summarycontainer,
+.card-summary-annual > div {
+    flex-direction: column;
+}
+
+.card-imgcontainer {
+    overflow: hidden;
+    border-radius: inherit;
+    border-bottom-left-radius: unset;
+    border-bottom-right-radius: unset;
+}
+
+.card-summarycontainer {
+    flex: 1;
+    height: 100%;
+    padding: 3rem;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.card-summarycontainer > p {
+    line-height: 1.5;
+    margin-top: -1.25rem;
+}
+
+.card-summarycontainer h2,
+.card-summarycontainer h3
+{
+    color: var(--clr-neutral-800);
+    font-weight: var(--fw-extraBold);
+}
+
+.card-summarycontainer h2 {
+    font-size: var(--fs-heading2);
+}
+
+.card-summarycontainer h3 {
+    font-size: var(--fs-heading3);
+}
+
+.card-summary-annual {
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1.625rem;
+    margin-top: -1rem;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0.75rem;
+    background-color: hsla(from var(--clr-neutral-200) h s l / 0.075);
+}
+
+.card-summary-annual > div {
+    flex-grow: 2;
+    gap: 0.375rem;
+    text-align: left;
+    font-weight: var(--fw-Bold);
+}
+
+.card-order-summary a,
+.card-summarycontainer > button
+{
+    font-size: var(--fs-small);
+    font-weight: var(--fw-Bold);
+    outline: none;
+}
+
+.card-order-summary a {
+    border-radius: 0.5rem;
+    outline-offset: 0.5rem;
+}
+
+.card-summary-annual > a {
+    color: var(--clr-primary-600);
+}
+.card-summarycontainer > a {
+    max-width: 14ch;
+    align-self: center;
+    color: var(--clr-neutral-200);
+    font-weight: var(--fw-extraBold);
+    text-decoration: none;
+}
+
+.card-summarycontainer > button {
+    height: 3rem;
+    border: none;
+    color: var(--clr-neutral-100);
+    border-radius: 0.75rem;
+    background-color: var(--clr-primary-600);
+    box-shadow: 0.25rem 0.75rem 1rem 0.5rem hsla(from var(--clr-primary-600) h s l / 0.15);
+}
+
+
+/* ------------- Events ------------- */
+
+.card-order-summary a:hover,
+.card-summarycontainer > button:hover
+{
+    cursor: pointer;
+}
+
+.card-summary-annual > a:hover,
+.card-summary-annual > a:focus-visible
+{
+    text-decoration: none;
+    color: var(--clr-primary-500);
+    transition: color 0.3s ease-out;
+    
+}
+.card-summary-annual > a:focus-visible {
+    outline: 0.125rem solid var(--clr-primary-500);
+}
+
+.card-summarycontainer > button:hover,
+.card-summarycontainer > button:focus-visible
+{   
+    background-color: var(--clr-primary-500);
+    transition: background-color 0.3s ease-out;
+}
+
+.card-summarycontainer > a:hover,
+.card-summarycontainer > a:focus-visible {
+    color: var(--clr-neutral-800);
+    transition: color 0.3s ease-out;
+}
+
+.card-summarycontainer > a:focus-visible {
+    outline: 0.125rem solid var(--clr-primary-500);
+}
+
+
+/* ---------- Media Query ----------- */
+
+
+@media (max-width: 28.75rem) {
+
+    :root {
+        --fs-small: 0.9375rem;
+        --fs-normal: 0.9375rem;
+        --fs-heading2: 1.25rem;
+        --fs-heading3: 0.9375rem;
+    }
+
+    .card-order-summary {
+        width: 20.5rem;
+        height: 35rem;
+    }
+
+    .card-imgcontainer > img {
+        max-height: 10rem;
+    }
+
+    .card-summarycontainer {
+        padding: 1.5rem;
+    }
+
+    .card-summarycontainer > p {
+        max-width: 25ch;
+        align-self: center;
+    }
+
+    .card-summary-annual {
+        padding: 1rem;
+        margin-top: unset;
+    }
+
+    .card-summary-annual > div {
+        gap: 0.1875rem;
+    }
+
+    .card-summary-annual > a {
+        font-size: calc(var(--fs-small) - 0.125rem);
+    }
+}

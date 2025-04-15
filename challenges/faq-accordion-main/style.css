@@ -1,0 +1,179 @@
+@font-face {
+    font-family: "WorkSans";
+    src: url(./assets/fonts/WorkSans-VariableFont_wght.ttf);
+}
+
+:root {
+    --clr-White: hsl(0, 0%, 100%);
+    --clr-Lightpink: hsl(275, 100%, 97%);
+    --clr-Grayishpurple: hsl(292, 16%, 49%);
+    --clr-Darkpurple: hsl(292, 42%, 14%);
+    --clr-Highlight: hsla(293, 52%, 48%, 0.993);
+    --clr-BoxShadow: hsla(292, 16%, 49%, 0.125);
+
+    --fs-normal: 1rem;
+    --ff-normal: "WorkSans";
+    --fw-normal: 400;
+    --fw-SemiBold: 600;
+    --fw-Bold: 700;
+}
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--ff-normal);
+    font-size: var(--fs-normal);
+    font-weight: var(--fw-normal);
+    background-color: var(--clr-Lightpink);
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+picture>img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 3.4rem;
+    margin-bottom: 0.75rem;
+}
+
+h1>img {
+    margin-right: 1.5rem;
+    align-self: center;
+}
+
+.faq-container {
+    width: 37.5rem;
+    background-color: var(--clr-White);
+    border-radius: 0.8rem;
+    padding: 2.4rem 2.4rem 1rem 2.4rem;
+    margin-top: 14vw;
+    box-shadow: 0.8rem 1rem 1.5rem 0.2rem var(--clr-BoxShadow);
+}
+
+.faq-box {
+    width: 100%;
+    padding-block: 1.75rem;
+    
+}
+
+.faq-box:not(:last-of-type) {
+    border-bottom: 0.1rem solid var(--clr-Lightpink);
+}
+
+label {
+    display: inline-block;
+    font-size: 1.125rem;
+    font-weight: var(--fw-SemiBold);
+}
+
+.toggle-button {
+    position: relative;
+    float: inline-end;
+    top: -0.25rem;
+    width: 1.75rem;
+    height: 1.75rem;
+    appearance: none;
+    background-image: url(./assets/images/icon-plus.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.faq-desc {
+    max-height: 0;
+    overflow: hidden;
+}
+
+.faq-desc>p {
+    color: var(--clr-Grayishpurple);
+    padding-top: 1.75rem;
+    line-height: 1.5;
+    display: none;
+    opacity: 0;
+}
+
+/* ---------- Events ---------- */
+
+label:hover {
+    cursor: pointer;
+    color: var(--clr-Highlight);
+}
+
+.faq-box:focus-within label {
+    color: var(--clr-Highlight);
+}
+
+.toggle-button:checked {
+    background-image: url(./assets/images/icon-minus.svg);
+}
+
+.toggle-button:checked + .faq-desc>p {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.toggle-button:checked + .faq-desc {
+    max-height: 10rem;
+    transition: max-height 0.25s ease-in-out, padding 0.25s ease-in-out;
+}
+
+
+@media (max-width: 39rem) {
+
+    body {
+        font-size: 0.875rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 0;
+    }
+
+    h1>img {
+        width: 1.5rem;
+    }
+
+    label {
+        font-size: 1rem;
+        max-width: 21ch;
+    }
+
+    .faq-container { 
+        max-width: 21rem;
+        border-radius: 0.4rem;
+        padding: 1.5rem 1.5rem 0 1.5rem;
+        margin-top: 9rem;
+    }
+
+    .faq-box {
+        padding-block: 1.45rem;
+    }
+
+    .faq-desc {
+        max-width: 32ch;
+    }
+
+    .faq-desc>p {
+        padding-top: 1.3rem;
+    }
+}

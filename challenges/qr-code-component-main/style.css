@@ -1,0 +1,67 @@
+:root {
+
+    --ff-outfit: 'Outfit', sans-serif;
+    --fw-normal: 400;
+    --fw-bold: 700;
+    --fs-400: 0.9375rem;
+    --fs-600: 1.5rem;
+
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-slate-300: hsl(212, 45%, 89%);
+    --clr-slate-500: hsl(216, 15%, 48%);
+    --clr-slate-900: hsl(218, 44%, 22%);
+
+    --br-small: 0.7rem;
+    --br-normal: 1.4rem;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: var(--ff-outfit);
+    font-size: var(--fs-400);
+    font-weight: var(--fw-normal);
+}
+
+body {
+    background-color: var(--clr-slate-300);
+}
+
+.wrapper {
+    display: flex;
+    height: 98vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    width: 21.3em;
+    flex-shrink: 0;
+    background-color: var(--clr-white);
+    border-radius: var(--br-normal);
+    box-shadow: 0rem 2rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    padding: 1rem;
+    text-align: center;
+}
+
+#img-qr {
+    width: 100%;
+    height: auto;
+    border-radius: var(--br-small);
+}
+
+.content > h1 {
+    color: var(--clr-slate-900);
+    font-size: var(--fs-600);
+}
+
+.content > p {
+    color: var(--clr-slate-500);
+    padding-inline: 1rem;
+    margin-block-end: 2em;
+}

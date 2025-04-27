@@ -3,62 +3,62 @@
     [
         {
             "challenge_name": "Article preview component",
-            "challenge_link": "./challenges/article-preview-component-master/index.html",
+            "challenge_link": "./challenges/newbie/article-preview-component-master/index.html",
             "challenge_thumbnail_link": "./assets/images/article-preview-component.jpg" 
         },
         {
             "challenge_name": "Blog preview card",
-            "challenge_link": "./challenges/blog-preview-card-main/index.html",
+            "challenge_link": "./challenges/newbie/blog-preview-card-main/index.html",
             "challenge_thumbnail_link": "./assets/images/blog-preview-card.jpg" 
         },
         {
             "challenge_name": "FAQ accordion",
-            "challenge_link": "./challenges/faq-accordion-main/index.html",
+            "challenge_link": "./challenges/newbie/faq-accordion-main/index.html",
             "challenge_thumbnail_link": "./assets/images/faq-accordion.jpg" 
         },
         {
             "challenge_name": "Four card feature section",
-            "challenge_link": "./challenges/four-card-feature-section-master/index.html",
+            "challenge_link": "./challenges/newbie/four-card-feature-section-master/index.html",
             "challenge_thumbnail_link": "./assets/images/four-card-feature-section.jpg" 
         },
         {
             "challenge_name": "Interactive rating component",
-            "challenge_link": "./challenges/interactive-rating-component-main/index.html",
+            "challenge_link": "./challenges/newbie/interactive-rating-component-main/index.html",
             "challenge_thumbnail_link": "./assets/images/interactive-rating-component.jpg" 
         },
         {
             "challenge_name": "NFT preview card component",
-            "challenge_link": "./challenges/nft-preview-card-component-main/index.html",
+            "challenge_link": "./challenges/newbie/nft-preview-card-component-main/index.html",
             "challenge_thumbnail_link": "./assets/images/nft-preview-card-component.jpg" 
         },
         {
             "challenge_name": "Order summary component",
-            "challenge_link": "./challenges/order-summary-component-main/index.html",
+            "challenge_link": "./challenges/newbie/order-summary-component-main/index.html",
             "challenge_thumbnail_link": "./assets/images/order-summary-component.jpg" 
         },
         {
             "challenge_name": "Product preview card component",
-            "challenge_link": "./challenges/product-preview-card-component-main/index.html",
+            "challenge_link": "./challenges/newbie/product-preview-card-component-main/index.html",
             "challenge_thumbnail_link": "./assets/images/product-preview-card-component.jpg" 
         },
         {
             "challenge_name": "QR code component",
-            "challenge_link": "./challenges/qr-code-component-main/index.html",
+            "challenge_link": "./challenges/newbie/qr-code-component-main/index.html",
             "challenge_thumbnail_link": "./assets/images/qr-code-component.jpg" 
         },
         {
             "challenge_name": "Recipe page",
-            "challenge_link": "./challenges/recipe-page-main/index.html",
+            "challenge_link": "./challenges/newbie/recipe-page-main/index.html",
             "challenge_thumbnail_link": "./assets/images/recipe-page.jpg" 
         },
         {
             "challenge_name": "Results summary component",
-            "challenge_link": "./challenges/results-summary-component-main/index.html",
+            "challenge_link": "./challenges/newbie/results-summary-component-main/index.html",
             "challenge_thumbnail_link": "./assets/images/results-summary-component.jpg" 
         },
         {
             "challenge_name": "Social links profile",
-            "challenge_link": "./challenges/social-links-profile-main/index.html",
+            "challenge_link": "./challenges/newbie/social-links-profile-main/index.html",
             "challenge_thumbnail_link": "./assets/images/social-links-profile.jpg" 
         }
     ],
@@ -67,22 +67,22 @@
     [
         {
             "challenge_name": "Newsletter sign-up form with success message",
-            "challenge_link": "./challenges/newsletter-sign-up-with-success-message-main/index.html",
+            "challenge_link": "./challenges/junior/newsletter-sign-up-with-success-message-main/index.html",
             "challenge_thumbnail_link": "./assets/images/newsletter-sign-up-with-success-message.jpg" 
         },
         {
             "challenge_name": "Testimonials grid section",
-            "challenge_link": "./challenges/testimonials-grid-section-main/index.html",
+            "challenge_link": "./challenges/junior/testimonials-grid-section-main/index.html",
             "challenge_thumbnail_link": "./assets/images/testimonials-grid-section.jpg" 
         },
         {
             "challenge_name": "Time tracking dashboard",
-            "challenge_link": "./challenges/time-tracking-dashboard-main/index.html",
+            "challenge_link": "./challenges/junior/time-tracking-dashboard-main/index.html",
             "challenge_thumbnail_link": "./assets/images/time-tracking-dashboard.jpg" 
         },
         {
             "challenge_name": "Tip calculator app",
-            "challenge_link": "./challenges/tip-calculator-app-main/index.html",
+            "challenge_link": "./challenges/junior/tip-calculator-app-main/index.html",
             "challenge_thumbnail_link": "./assets/images/tip-calculator-app.jpg" 
         }
     ]
